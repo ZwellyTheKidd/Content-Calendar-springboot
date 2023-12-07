@@ -1,0 +1,19 @@
+### Get All content
+GET http://local:8080/api/content
+
+### Get content by Id
+GET http://local:8080/api/content/{id}
+
+### Create new content
+POST http://local:8080/api/content
+Content-Type:application/json
+
+{
+
+}
+
+### Update existing Content with valid id
+PUT http://local:8080/api/content/{id}
+
+### DELETE existing Content with valid id
+DELETE http://local:8080/api/content/{id}
