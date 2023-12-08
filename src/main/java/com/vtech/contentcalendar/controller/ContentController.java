@@ -1,23 +1,23 @@
 package com.vtech.contentcalendar.controller;
 
 import com.vtech.contentcalendar.model.Content;
-import com.vtech.contentcalendar.repository.ContentCollectionRepository;
+import com.vtech.contentcalendar.repository.ContentRepository;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/content")
 @CrossOrigin
 
 public class ContentController {
-    private final ContentCollectionRepository repository;
 
-    public ContentController(ContentCollectionRepository repository) {
+    private final ContentRepository repository;
+
+    public ContentController(ContentRepository repository) {
         this.repository = repository;
     }
 
@@ -53,7 +53,7 @@ public class ContentController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id){
-        repository.delete(id);
+        repository.deleteById(id);
     }
 
 
